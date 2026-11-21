@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { PlatformLayout } from "../components/platform-layout";
 
 type Officer = {
@@ -131,15 +130,6 @@ export default function OfficersPage() {
         </div>
       </section>
 
-      <section className="officers-cta" aria-label="Get involved">
-        <div>
-          <p className="eyebrow">Your place is here, too</p>
-          <h2>Good communities grow together.</h2>
-        </div>
-        <Link className="button button-orange" href="/events">
-          Join an upcoming event <span aria-hidden="true">↗</span>
-        </Link>
-      </section>
     </PlatformLayout>
   );
 }

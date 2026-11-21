@@ -1,56 +1,48 @@
 import { PlatformLayout } from "../components/platform-layout";
-
-const events = [
-  {
-    month: "NOV",
-    day: "18",
-    date: "November 18, 2026",
-    dateTime: "2026-11-18",
-    title: "Monthly members’ meeting",
-    description: "Catch up with members, hear the latest updates, and help shape what comes next.",
-    details: "6:00 PM · Community Hall",
-  },
-  {
-    month: "NOV",
-    day: "28",
-    date: "November 28, 2026",
-    dateTime: "2026-11-28",
-    title: "Community service day",
-    description: "Spend the morning lending a hand on a project that supports our neighborhood.",
-    details: "8:30 AM · Meet at the main office",
-  },
-  {
-    month: "DEC",
-    day: "12",
-    date: "December 12, 2026",
-    dateTime: "2026-12-12",
-    title: "Year-end community gathering",
-    description: "Celebrate the year’s work and reconnect with the ELITES CONNECT community.",
-    details: "5:00 PM · Venue to be announced",
-  },
-];
+import { LocalCommunityPosts } from "../components/local-community-posts";
+import { gpoaEvents } from "../lib/gpoa-events";
 
 export default function EventsPage() {
   return (
     <PlatformLayout
       activePath="/events"
-      eyebrow="Make room for good things"
+      eyebrow="General Plan of Activities · A.Y. 2026–2027"
       title="Events"
-      description="Meet up, pitch in, and be part of what’s happening next."
+      description="Explore the planned activities, objectives, venues, and target participants for the academic year."
     >
       <div className="event-list">
-        {events.map((event) => (
-          <article className="event-row" key={event.dateTime}>
-            <div className="event-date"><span>{event.month}</span><strong>{event.day}</strong></div>
+        {gpoaEvents.map((event) => (
+          <article className="event-row" key={event.number}>
+            <div className="event-date event-date-plan" aria-label={event.date}>
+              <span>{event.month}</span>
+              <strong>{event.year}</strong>
+            </div>
             <div className="row-content">
-              <time dateTime={event.dateTime}>{event.date}</time>
+              {event.dateTime ? (
+                <time dateTime={event.dateTime}>{event.date}</time>
+              ) : (
+                <span className="row-content-date">{event.date}</span>
+              )}
+              <span className="event-plan-number">GPOA Activity {event.number}</span>
               <h2>{event.title}</h2>
-              <p>{event.description}</p>
-              <span className="event-details">{event.details}</span>
+              <p className="event-plan-objective">
+                <strong>Objective:</strong> {event.objective}
+              </p>
+              <dl className="event-plan-meta">
+                <div>
+                  <dt>Venue</dt>
+                  <dd>{event.venue}</dd>
+                </div>
+                <div>
+                  <dt>Target participants</dt>
+                  <dd>{event.participants}</dd>
+                </div>
+              </dl>
             </div>
             <span className="row-accent" aria-hidden="true">↗</span>
           </article>
         ))}
+        <LocalCommunityPosts kind="events" />
       </div>
     </PlatformLayout>
   );

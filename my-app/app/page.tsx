@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
+import { HomeUpcomingEvents } from "./components/home-upcoming-events";
 import communityBanner from "./pictures/2e1d55f3-50ff-4f3f-b673-6a29e5207a4c (1).jpg";
+import collegeLogo from "./pictures/CCS.png";
 
 const platforms = [
 	{
@@ -23,13 +25,6 @@ const platforms = [
 	},
 	{
 		number: "03",
-		title: "Projects",
-		description: "See what members are building and the progress so far.",
-		href: "/projects",
-		action: "Explore projects",
-	},
-	{
-		number: "04",
 		title: "Officers",
 		description: "Meet the people guiding our community and helping members connect.",
 		href: "/officers",
@@ -77,6 +72,34 @@ export default function Home() {
 			)}
 			<SiteHeader activePath="/" />
 			<main id="main-content">
+				<section className="home-brand-section" aria-labelledby="home-brand-title">
+					<Link
+						className="wrap home-brand-inner home-brand-link"
+						href="/about"
+						aria-label="Learn about ELITES CONNECT"
+					>
+						<div className="home-brand-logos" aria-hidden="true">
+							<div className="home-brand-mark home-college-mark">
+								<Image src={collegeLogo} alt="" />
+							</div>
+							<div className="home-brand-mark">
+								<Image
+									src="/ccs-elites-logo.png"
+									alt=""
+									width={140}
+									height={140}
+								/>
+							</div>
+						</div>
+						<div className="home-brand-copy">
+							<p className="eyebrow">Gordon College · College of Computer Studies</p>
+							<h2 id="home-brand-title">ELITES <span>CONNECT</span></h2>
+							<p>Empowered League of Information Technology Education Students</p>
+							<p className="home-brand-tagline">Empowering future I.T. professionals.</p>
+						</div>
+					</Link>
+				</section>
+
 				<section className="home-hero" aria-label="ELITES Connect community banner">
 					<Image
 						src={communityBanner}
@@ -85,6 +108,8 @@ export default function Home() {
 						className="home-hero-banner"
 					/>
 				</section>
+
+				<HomeUpcomingEvents />
 
 				<section
 					className="platforms-section wrap"
@@ -121,28 +146,6 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="home-about">
-					<div className="wrap home-about-inner">
-						<p className="eyebrow">Who we are</p>
-						<h2>
-							One connected community.
-							<br />
-							<span>Many ways to make an impact.</span>
-						</h2>
-						<p>
-							ELITES CONNECT brings members together through clear
-							communication, meaningful events, and projects that benefit our
-							community.
-						</p>
-						<Link
-							href="/officers"
-							className="text-link"
-						>
-							Meet the people behind it{" "}
-							<span aria-hidden="true">→</span>
-						</Link>
-					</div>
-				</section>
 			</main>
 			<SiteFooter />
 		</>

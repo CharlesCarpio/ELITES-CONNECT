@@ -4,8 +4,9 @@ import Link from "next/link";
 const navigation = [
   { href: "/announcements", label: "Announcements" },
   { href: "/events", label: "Events" },
-  { href: "/projects", label: "Projects" },
+  { href: "/meetings", label: "Meeting" },
   { href: "/officers", label: "Officers" },
+  { href: "/admin", label: "Admin" },
 ];
 
 function Logo() {
@@ -27,7 +28,7 @@ export function SiteHeader({ activePath }: { activePath: string }) {
   return (
     <header className="site-header">
       <div className="wrap header-inner">
-        <Link className="brand" href="/" aria-label="ELITES CONNECT home">
+        <Link className="brand" href="/about" aria-label="About ELITES CONNECT">
           <Logo />
           <span className="brand-name">ELITES<span>CONNECT</span></span>
         </Link>

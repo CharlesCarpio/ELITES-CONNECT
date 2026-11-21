@@ -1,4 +1,5 @@
 import { PlatformLayout } from "../components/platform-layout";
+import { LocalCommunityPosts } from "../components/local-community-posts";
 
 const announcements = [
   {
@@ -44,6 +45,7 @@ export default function AnnouncementsPage() {
             <span className="row-accent" aria-hidden="true">↗</span>
           </article>
         ))}
+        <LocalCommunityPosts kind="announcement" indexOffset={announcements.length} />
       </div>
     </PlatformLayout>
   );
