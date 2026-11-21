@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
+import communityBanner from "./pictures/2e1d55f3-50ff-4f3f-b673-6a29e5207a4c (1).jpg";
 
 const platforms = [
 	{
@@ -99,32 +100,15 @@ export default function Home() {
 								LEARN <span>·</span> CREATE <span>·</span> CONNECT
 							</p>
 						</div>
-						<div
-							className="home-art"
-							aria-label="Members connecting outdoors"
-						>
+						<div className="home-art">
 							<div className="home-photo-frame">
 								<Image
-									src="/elites-community-banner.jpg"
+									src={communityBanner}
 									alt="Gordon College College of Computer Studies ELITES banner"
-									width={1400}
-									height={800}
 									priority
 									className="home-photo"
 								/>
 							</div>
-							<div className="photo-stamp">
-								<span>BSIT</span>
-								<strong>ELITES</strong>
-								<small>EMPOWERING FUTURE I.T. PROFESSIONALS</small>
-							</div>
-							<div className="photo-caption">
-								<span>COLLEGE OF COMPUTER STUDIES</span>
-								<strong>Empower the future.</strong>
-							</div>
-							<span className="art-index" aria-hidden="true">
-								EC / 26
-							</span>
 						</div>
 					</div>
 				</section>

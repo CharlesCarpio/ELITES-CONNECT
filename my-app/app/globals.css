@@ -386,148 +386,36 @@ h3 {
   color: var(--accent);
 }
 
-/* Hero art */
+/* Community banner */
 .home-art {
   position: relative;
-  min-height: 420px;
-  perspective: 1100px;
+  width: 100%;
+  aspect-ratio: 1403 / 533;
   animation: rise-in 760ms 100ms cubic-bezier(.2, .75, .25, 1) both;
 }
 
 .home-photo-frame {
   position: absolute;
-  inset: 20px 34px 22px 24px;
+  inset: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, .26);
-  background: #111820;
-  box-shadow:
-    20px 20px 0 rgba(255, 107, 34, .88),
-    0 35px 70px rgba(0, 0, 0, .5),
-    inset 0 0 0 5px rgba(16, 16, 15, .08);
-  transform: rotateY(-7deg) rotateX(3deg) rotateZ(1deg);
-  transform-style: preserve-3d;
-  animation: home-photo-float 7s ease-in-out infinite;
+  background: #fff;
+  box-shadow: 12px 14px 0 rgba(255, 107, 34, .72), 0 28px 54px rgba(0, 0, 0, .4);
   transition: transform 450ms cubic-bezier(.2, .75, .25, 1), box-shadow 450ms ease;
-}
-
-.home-photo-frame::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(135deg, rgba(255, 107, 34, .12), transparent 38%),
-    repeating-linear-gradient(0deg, transparent 0 4px, rgba(10, 20, 32, .045) 4px 5px);
-  mix-blend-mode: screen;
-}
-
-.home-photo-frame::after {
-  content: "ELITES // 2026";
-  position: absolute;
-  z-index: 3;
-  top: 12px;
-  right: 12px;
-  padding: 5px 8px;
-  border: 1px solid rgba(255, 255, 255, .35);
-  background: rgba(13, 20, 28, .72);
-  color: #fff;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: .12em;
-  backdrop-filter: blur(6px);
 }
 
 .home-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  filter: saturate(1.08) contrast(1.08) brightness(.98);
-  transform: translateZ(14px) scale(1.02);
   transition: filter 500ms ease, transform 700ms cubic-bezier(.2, .75, .25, 1);
-}
-
-.photo-stamp {
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  display: grid;
-  width: 112px;
-  height: 112px;
-  align-content: center;
-  padding: 14px;
-  background: var(--accent);
-  color: #11100f;
-  box-shadow: 8px 10px 0 rgba(0, 0, 0, .3);
-  transform: translateZ(70px) rotate(-7deg);
-  animation: stamp-float 5s ease-in-out infinite;
-}
-
-.photo-stamp span,
-.photo-stamp small {
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .1em;
-}
-
-.photo-stamp strong {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 19px;
-  line-height: 1;
-}
-
-.photo-stamp small {
-  margin-top: 6px;
-  font-size: 6px;
-}
-
-.photo-caption {
-  position: absolute;
-  right: 51px;
-  bottom: 45px;
-  display: grid;
-  gap: 3px;
-  padding: 13px 15px;
-  background: rgba(16, 16, 15, .9);
-  color: var(--ink);
-  transform: translateZ(36px);
-  backdrop-filter: blur(8px);
-}
-
-.photo-caption span {
-  color: var(--accent);
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: .1em;
-}
-
-.photo-caption strong {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 17px;
-}
-
-.art-index {
-  position: absolute;
-  top: 5px;
-  right: 0;
-  color: #85837e;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .12em;
 }
 
 @media (hover: hover) {
   .home-art:hover .home-photo-frame {
-    box-shadow: 12px 12px 0 rgba(255, 107, 34, .9), 0 42px 76px rgba(0, 0, 0, .55);
-    transform: rotateY(-1deg) rotateX(0) rotateZ(0) translate3d(0, -4px, 10px);
-    animation-play-state: paused;
-  }
-
-  .home-art:hover .home-photo {
-    filter: saturate(.95) contrast(1.05);
-    transform: translateZ(25px) scale(1.08);
+    box-shadow: 12px 18px 0 rgba(255, 107, 34, .82), 0 34px 60px rgba(0, 0, 0, .48);
+    transform: translateY(-4px);
   }
 }
 
@@ -692,6 +580,12 @@ h3 {
   margin: 0;
   color: var(--muted);
   font-size: 16px;
+}
+
+.platform-content,
+.announcement-list,
+.event-list {
+  width: 100%;
 }
 
 /* Announcements + events rows */
@@ -1288,16 +1182,6 @@ h3 {
   }
 }
 
-@keyframes home-photo-float {
-  0%, 100% { transform: rotateY(-7deg) rotateX(3deg) rotateZ(1deg) translateY(0); }
-  50% { transform: rotateY(-5deg) rotateX(2deg) rotateZ(1deg) translateY(-5px); }
-}
-
-@keyframes stamp-float {
-  0%, 100% { transform: translateZ(70px) rotate(-7deg) translateY(0); }
-  50% { transform: translateZ(70px) rotate(-5deg) translateY(-6px); }
-}
-
 @keyframes y2k-ticker {
   0%, 92%, 100% { opacity: 1; transform: translateY(0); }
   94% { opacity: 0; transform: translateY(3px); }
@@ -1323,7 +1207,7 @@ h3 {
   }
 
   .home-art {
-    min-height: 350px;
+    margin-inline: 0;
   }
 
   .platform-grid,
@@ -1378,17 +1262,7 @@ h3 {
   }
 
   .home-art {
-    min-height: 340px;
     margin-inline: 10px;
-  }
-
-  .home-photo-frame {
-    inset: 18px 25px 22px 20px;
-  }
-
-  .photo-caption {
-    right: 38px;
-    bottom: 40px;
   }
 
   .platforms-section {
@@ -1610,7 +1484,6 @@ h3 {
   }
 
   .home-photo-frame,
-  .photo-stamp,
   .home-copy,
   .home-art,
   .platform-page-heading,
@@ -1836,4 +1709,31 @@ h3 {
   0% { opacity: 1; clip-path: inset(0 0 0 0); }
   70% { opacity: 1; clip-path: inset(0 0 100% 0); }
   100% { opacity: 0; visibility: hidden; clip-path: inset(0 0 100% 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .home-photo-frame,
+  .home-copy,
+  .home-art,
+  .platform-page-heading,
+  .roster,
+  .intro-grid,
+  .intro-mark,
+  .intro-terminal,
+  .intro-kicker,
+  .intro-terminal h1,
+  .intro-tagline,
+  .intro-status,
+  .intro-loader span,
+  .site-intro,
+  .site-intro::before {
+    animation: none !important;
+  }
 }
