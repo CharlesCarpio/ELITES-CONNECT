@@ -323,100 +323,46 @@ h3 {
 
 /* 6. HOME PAGE ------------------------------------------------------------- */
 .home-hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(280px, 42vw, 600px);
+  place-items: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background: #141413;
-  background-image:
-    radial-gradient(ellipse at 82% 45%, rgba(255, 107, 34, .09), transparent 36%),
-    linear-gradient(115deg, transparent 0 68%, rgba(255, 255, 255, .018) 68% 68.15%, transparent 68.15%);
+  padding: clamp(24px, 5vw, 64px);
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255, 107, 34, .18), transparent 58%),
+    #10100f;
 }
 
-.home-hero-inner {
-  display: grid;
-  min-height: 610px;
-  grid-template-columns: minmax(0, .95fr) minmax(400px, 1.05fr);
-  align-items: center;
-  gap: 56px;
-  padding-block: 55px;
-}
-
-.home-copy {
+.home-hero-banner {
   position: relative;
-  z-index: 2;
-  animation: rise-in 650ms cubic-bezier(.2, .75, .25, 1) both;
+  z-index: 1;
+  display: block;
+  width: min(100%, 1403px);
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, .18);
+  box-shadow:
+    0 0 0 1px rgba(255, 107, 34, .14),
+    0 28px 80px rgba(0, 0, 0, .48),
+    0 0 90px rgba(255, 107, 34, .12);
+  animation: banner-reveal 800ms cubic-bezier(.2, .75, .25, 1) both;
 }
 
-.home-copy > .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 11px;
+@keyframes banner-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.home-copy h1 {
-  max-width: 640px;
-  margin: 24px 0 20px;
-  font-size: clamp(56px, 7vw, 88px);
-  font-weight: 800;
-  line-height: .96;
-}
-
-.home-copy h1 span,
 .home-about h2 span {
   color: var(--accent);
-}
-
-.hero-description {
-  max-width: 440px;
-  margin-bottom: 26px;
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.hero-note {
-  display: flex;
-  gap: 8px;
-  margin: 34px 0 0;
-  color: var(--faint);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .1em;
-}
-
-.hero-note span {
-  color: var(--accent);
-}
-
-/* Community banner */
-.home-art {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1403 / 533;
-  animation: rise-in 760ms 100ms cubic-bezier(.2, .75, .25, 1) both;
-}
-
-.home-photo-frame {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .26);
-  background: #fff;
-  box-shadow: 12px 14px 0 rgba(255, 107, 34, .72), 0 28px 54px rgba(0, 0, 0, .4);
-  transition: transform 450ms cubic-bezier(.2, .75, .25, 1), box-shadow 450ms ease;
-}
-
-.home-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: filter 500ms ease, transform 700ms cubic-bezier(.2, .75, .25, 1);
-}
-
-@media (hover: hover) {
-  .home-art:hover .home-photo-frame {
-    box-shadow: 12px 18px 0 rgba(255, 107, 34, .82), 0 34px 60px rgba(0, 0, 0, .48);
-    transform: translateY(-4px);
-  }
 }
 
 /* Platforms */
@@ -1195,21 +1141,6 @@ h3 {
 
 /* 10. RESPONSIVE ----------------------------------------------------------- */
 @media (max-width: 920px) {
-  .home-hero-inner {
-    min-height: auto;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, .9fr);
-    gap: 30px;
-    padding-block: 54px;
-  }
-
-  .home-copy h1 {
-    font-size: 62px;
-  }
-
-  .home-art {
-    margin-inline: 0;
-  }
-
   .platform-grid,
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1248,21 +1179,6 @@ h3 {
 
   .site-header nav .nav-home {
     margin-left: auto;
-  }
-
-  /* Home */
-  .home-hero-inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 26px;
-    padding-block: 42px 48px;
-  }
-
-  .home-copy h1 {
-    font-size: clamp(54px, 13vw, 74px);
-  }
-
-  .home-art {
-    margin-inline: 10px;
   }
 
   .platforms-section {
@@ -1483,9 +1399,6 @@ h3 {
     transition-duration: .01ms !important;
   }
 
-  .home-photo-frame,
-  .home-copy,
-  .home-art,
   .platform-page-heading,
   .roster {
     animation: none;
@@ -1719,11 +1632,9 @@ h3 {
     transition-duration: .01ms !important;
   }
 
-  .home-photo-frame,
-  .home-copy,
-  .home-art,
   .platform-page-heading,
   .roster,
+  .home-hero-banner,
   .intro-grid,
   .intro-mark,
   .intro-terminal,

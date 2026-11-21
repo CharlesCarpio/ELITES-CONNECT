@@ -77,40 +77,13 @@ export default function Home() {
 			)}
 			<SiteHeader activePath="/" />
 			<main id="main-content">
-				<section className="home-hero">
-					<div className="wrap home-hero-inner">
-						<div className="home-copy">
-							<p className="eyebrow">
-								<span className="live-dot" /> BSIT community network
-							</p>
-							<h1>
-								Ideas in code.
-								<br />
-								Impact <span>in action.</span>
-							</h1>
-							<p className="hero-description">
-								ELITES CONNECT is the digital home for BSIT students—where
-								people connect, ideas become projects, and every member helps
-								shape what comes next.
-							</p>
-							<Link className="button button-orange" href="/announcements">
-								Enter the community <span aria-hidden="true">↗</span>
-							</Link>
-							<p className="hero-note">
-								LEARN <span>·</span> CREATE <span>·</span> CONNECT
-							</p>
-						</div>
-						<div className="home-art">
-							<div className="home-photo-frame">
-								<Image
-									src={communityBanner}
-									alt="Gordon College College of Computer Studies ELITES banner"
-									priority
-									className="home-photo"
-								/>
-							</div>
-						</div>
-					</div>
+				<section className="home-hero" aria-label="ELITES Connect community banner">
+					<Image
+						src={communityBanner}
+						alt="Gordon College College of Computer Studies ELITES banner"
+						priority
+						className="home-hero-banner"
+					/>
 				</section>
 
 				<section
