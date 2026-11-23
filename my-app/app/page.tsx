@@ -48,7 +48,7 @@ export default function Home() {
 							</div>
 							<div className="home-brand-mark">
 								<Image
-									src="/ccs-elites-logo.png"
+									src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/ccs-elites-logo.png`}
 									alt=""
 									width={140}
 									height={140}

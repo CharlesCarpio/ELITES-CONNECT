@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "Announcements, events, meetings, and project updates from ELITES CONNECT.",
   icons: {
-    icon: "/ccs-elites-logo.png",
-    apple: "/ccs-elites-logo.png",
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/ccs-elites-logo.png`,
+    apple: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/ccs-elites-logo.png`,
   },
 };
 

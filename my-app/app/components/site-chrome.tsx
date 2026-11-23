@@ -13,7 +13,7 @@ function Logo() {
   return (
     <span className="brand-mark" aria-hidden="true">
       <Image
-        src="/ccs-elites-logo.png"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/ccs-elites-logo.png`}
         alt=""
         width={64}
         height={64}
