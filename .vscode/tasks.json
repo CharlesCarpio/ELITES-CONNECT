@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start ELITES CONNECT",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev",
+				"--prefix",
+				"my-app"
+			],
+			"isBackground": true
+		}
+	]
+}
