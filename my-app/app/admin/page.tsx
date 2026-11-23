@@ -107,7 +107,7 @@ export default function AdminPage() {
     <PlatformLayout
       activePath="/admin"
       eyebrow="Browser-local publishing"
-      title="Admin posting"
+      title="ADMIN POSTING"
       description="Create announcements, events, and meetings for this browser."
     >
       <p className="admin-storage-notice">

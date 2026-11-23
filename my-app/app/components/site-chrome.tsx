@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
-  { href: "/announcements", label: "Announcements" },
-  { href: "/events", label: "Events" },
-  { href: "/meetings", label: "Meeting" },
+  { href: "/announcements", label: "ANNOUNCEMENTS" },
+  { href: "/events", label: "EVENTS" },
+  { href: "/meetings", label: "Meetings" },
   { href: "/officers", label: "Officers" },
-  { href: "/admin", label: "Admin" },
+  { href: "/admin", label: "ADMIN" },
 ];
 
 function Logo() {

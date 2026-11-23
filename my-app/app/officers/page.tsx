@@ -79,14 +79,14 @@ export default function OfficersPage() {
     <PlatformLayout
       activePath="/officers"
       eyebrow="Leadership structure"
-      title="Our officers"
+      title="OUR OFFICERS"
       description="Meet the people guiding ELITES CONNECT throughout the 2026–2027 term."
     >
       <section className="family-tree-section" aria-labelledby="family-tree-heading">
         <div className="family-tree-heading">
           <div>
             <p className="eyebrow">2026–2027 Organization</p>
-            <h2 id="family-tree-heading">ELITES leadership</h2>
+            <h2 id="family-tree-heading">ELITES LEADERSHIP</h2>
           </div>
           <span className="family-tree-count">{String(officerCount).padStart(2, "0")} OFFICERS</span>
         </div>

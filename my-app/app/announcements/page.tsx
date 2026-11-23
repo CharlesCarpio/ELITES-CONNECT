@@ -30,7 +30,7 @@ export default function AnnouncementsPage() {
     <PlatformLayout
       activePath="/announcements"
       eyebrow="The latest from our community"
-      title="Announcements"
+      title="ANNOUNCEMENTS"
       description="News, notices, and important updates from ELITES CONNECT."
     >
       <div className="announcement-list">

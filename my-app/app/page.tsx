@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { SiteFooter, SiteHeader } from "./components/site-chrome";
 import { HomeUpcomingEvents } from "./components/home-upcoming-events";
 import communityBanner from "./pictures/2e1d55f3-50ff-4f3f-b673-6a29e5207a4c (1).jpg";
@@ -33,43 +32,8 @@ const platforms = [
 ];
 
 export default function Home() {
-	const [introVisible, setIntroVisible] = useState(true);
-
-	useEffect(() => {
-		const timer = window.setTimeout(() => setIntroVisible(false), 5200);
-		return () => window.clearTimeout(timer);
-	}, []);
-
 	return (
 		<>
-			{introVisible && (
-				<div className="site-intro" role="dialog" aria-label="ELITES CONNECT introduction">
-					<div className="intro-grid" aria-hidden="true" />
-					<button className="intro-skip" type="button" onClick={() => setIntroVisible(false)}>
-						Skip intro <span aria-hidden="true">↗</span>
-					</button>
-					<div className="intro-terminal">
-						<p className="intro-code"><span>BSIT://</span> ELITES-CONNECT</p>
-						<div className="intro-mark">
-							<Image
-								src="/ccs-elites-logo.png"
-								alt="CCS ELITES logo"
-								width={180}
-								height={180}
-								priority
-								unoptimized
-							/>
-						</div>
-						<p className="intro-kicker">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</p>
-						<h1><span>ELITES</span> CONNECT</h1>
-						<p className="intro-tagline">Built for the future. Powered by community.</p>
-						<div className="intro-loader" aria-label="Loading website">
-							<span />
-						</div>
-						<p className="intro-status"><span>●</span> INITIALIZING NETWORK_2026</p>
-					</div>
-				</div>
-			)}
 			<SiteHeader activePath="/" />
 			<main id="main-content">
 				<section className="home-brand-section" aria-labelledby="home-brand-title">

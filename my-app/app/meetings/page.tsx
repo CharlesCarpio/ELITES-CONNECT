@@ -18,7 +18,7 @@ export default function MeetingsPage() {
     <PlatformLayout
       activePath="/meetings"
       eyebrow="ELITES gatherings"
-      title="Meetings"
+      title="MEETINGS"
       description="Meeting schedules and updates from the ELITES community."
     >
       <div className="event-list">

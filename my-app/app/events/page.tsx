@@ -7,7 +7,7 @@ export default function EventsPage() {
     <PlatformLayout
       activePath="/events"
       eyebrow="General Plan of Activities · A.Y. 2026–2027"
-      title="Events"
+      title="EVENTS"
       description="Explore the planned activities, objectives, venues, and target participants for the academic year."
     >
       <div className="event-list">
